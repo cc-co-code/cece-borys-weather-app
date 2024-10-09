@@ -1,7 +1,7 @@
 import { useState } from "react";
-
+import List from "./Components/List/List";
 import "./App.css";
-import Form from "./Components/Form";
+import Form from "./Components/Form/Form";
 
 function App() {
   // change array inside of object!
@@ -13,7 +13,17 @@ function App() {
     console.log(activities);
   }
 
-  return <Form onAddActivity={handleAddActivity} />;
+  return (
+    <>
+      {activities.map((activity) => (
+        <li key={activity.id}>
+          <List name={activity.name} />
+        </li>
+      ))}
+
+      <Form onAddActivity={handleAddActivity} />
+    </>
+  );
 }
 
 export default App;
