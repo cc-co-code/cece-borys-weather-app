@@ -21,7 +21,7 @@ function App() {
   console.log(activities);
   return (
     <>
-      <List activities={filteredActivities} />
+      <List activities={filteredActivities} isForGoodWeather={isGoodWeather} />
 
       <Form onAddActivity={handleAddActivity} />
     </>

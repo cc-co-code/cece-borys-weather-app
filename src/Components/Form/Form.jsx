@@ -17,7 +17,7 @@ export default function Form({ onAddActivity }) {
   }
   return (
     <>
-      <h1>Add new Activity</h1>
+      <h2>Add new Activity</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" required />
