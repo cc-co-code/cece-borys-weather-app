@@ -4,6 +4,7 @@ import "./App.css";
 import Form from "./Components/Form/Form";
 
 function App() {
+  const isGoodWeather = false;
   const [activities, setActivities] = useState(() => {
     const savedActivities = localStorage.getItem("activities");
     return savedActivities ? JSON.parse(savedActivities) : [];
@@ -14,10 +15,13 @@ function App() {
   function handleAddActivity(newActivity) {
     setActivities([...activities, newActivity]);
   }
+  const filteredActivities = activities.filter(
+    (activity) => activity.isForGoodWeather === isGoodWeather
+  );
   console.log(activities);
   return (
     <>
-      <List activities={activities} />
+      <List activities={filteredActivities} />
 
       <Form onAddActivity={handleAddActivity} />
     </>
