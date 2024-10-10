@@ -4,22 +4,14 @@ import "./App.css";
 import Form from "./Components/Form/Form";
 
 function App() {
-  // change array inside of object!
-  const [activities, setActivities] = useState([
-    { id: 0, name: "fish", isForGoodWeather: true },
-  ]);
+  const [activities, setActivities] = useState([]);
   function handleAddActivity(newActivity) {
     setActivities([...activities, newActivity]);
-    console.log(activities);
   }
-
+  console.log(activities);
   return (
     <>
-      {activities.map((activity) => (
-        <li key={activity.id}>
-          <List name={activity.name} />
-        </li>
-      ))}
+      <List activities={activities} />
 
       <Form onAddActivity={handleAddActivity} />
     </>
