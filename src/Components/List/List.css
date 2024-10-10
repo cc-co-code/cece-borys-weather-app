@@ -1,0 +1,49 @@
+.list {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list__title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.list__temperature {
+  padding: 5px 15px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 100px;
+  background-color: #f6e96b;
+  color: rgb(29, 29, 29);
+}
+
+.list__item {
+  margin: 15px 0;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  min-width: 300px;
+  background-color: #f6e96b;
+  border-radius: 15px;
+  color: rgb(29, 29, 29);
+}
+
+.list__button {
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 13px;
+  background-color: #051633;
+  color: #f6e96b;
+  transition: 0.3s ease-in-out;
+}
+
+.list__button:hover {
+  transform: scale(115%);
+}

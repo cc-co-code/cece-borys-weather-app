@@ -1,3 +1,4 @@
+import "./List.css";
 export default function List({
   activities,
   isForGoodWeather,
@@ -5,18 +6,23 @@ export default function List({
 }) {
   console.log(isForGoodWeather.isGoodWeather);
   return (
-    <section>
-      <h1>
+    <section className="list">
+      <h1 className="list__title">
         {isForGoodWeather.isGoodWeather
-          ? `Good Weather Activities${isForGoodWeather.condition}`
-          : `Bad Weather Activities${isForGoodWeather.condition}`}
+          ? `Good Weather Activities`
+          : `Bad Weather Activities`}
       </h1>
-      <h3>{`${isForGoodWeather.temperature}°`}</h3>
+      <div className="list__temperature">{`${isForGoodWeather.condition}${isForGoodWeather.temperature}°`}</div>
       <ul>
         {activities.map((activity) => (
-          <li key={activity.id}>
+          <li className="list__item" key={activity.id}>
             {activity.name}
-            <button onClick={() => onDeleteActivity(activity.id)}>X</button>
+            <button
+              className="list__button"
+              onClick={() => onDeleteActivity(activity.id)}
+            >
+              &#x2715;
+            </button>
           </li>
         ))}
       </ul>
