@@ -5,8 +5,8 @@ import Form from "./Components/Form/Form";
 
 function App() {
   const [isGoodWeather, setIsGoodWeather] = useState(null);
-  const [id, setId] = useState(["europe", "arctic", "sahara", "rainforest"]);
-
+  //const [id, setId] = useState(["europe", "arctic", "sahara", "rainforest"]);
+  const id = "europe";
   useEffect(() => {
     async function startFetching() {
       const response = await fetch(
@@ -30,6 +30,12 @@ function App() {
   if (!isGoodWeather) {
     return <p>Loading...</p>;
   }
+  function handleDeleteActivity(activityId) {
+    const updatedActivities = activities.filter(
+      (activity) => activity.id !== activityId
+    );
+    setActivities(updatedActivities);
+  }
   function handleAddActivity(newActivity) {
     setActivities([...activities, newActivity]);
   }
@@ -40,7 +46,11 @@ function App() {
 
   return (
     <>
-      <List activities={filteredActivities} isForGoodWeather={isGoodWeather} />
+      <List
+        activities={filteredActivities}
+        isForGoodWeather={isGoodWeather}
+        onDeleteActivity={handleDeleteActivity}
+      />
 
       <Form onAddActivity={handleAddActivity} />
     </>
