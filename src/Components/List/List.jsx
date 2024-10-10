@@ -1,8 +1,9 @@
 export default function List({ activities, isForGoodWeather }) {
+  console.log(isForGoodWeather.isGoodWeather);
   return (
     <section>
       <h1>
-        {isForGoodWeather
+        {isForGoodWeather.isGoodWeather
           ? "Good Weather Activities"
           : "Bad Weather Activities"}
       </h1>
